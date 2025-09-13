@@ -20,4 +20,4 @@ public:
 };
 
 
-#endif //RUBIKS_CUBE_SOLVER_CORNERPATTERNDATABASE_H
+#endif 
