@@ -38,16 +38,11 @@ public:
 
     /*
      * Returns the color of the cell at (row, col) in face.
-     * If Rubik's Cube face is pointing at you, then the row numbering starts from the
-     * top to bottom, and column numbering starts from the left to right.
-     * The rows and columns are 0-indexed.
-     * @param Face, row, and column index
      */
     virtual COLOR getColor(FACE face, unsigned row, unsigned col) const = 0;
 
     /*
      * Returns the first letter of the given COLOR
-     * Eg: For COLOR::GREEN, it returns 'G'
      */
     static char getColorLetter(COLOR color);
 
@@ -63,9 +58,6 @@ public:
 
     /*
      * Print the Rubik Cube in Planar format.
-     *
-     * The cube is laid out as follows.
-     *
      * The sides:
      *    U
      *  L F R B
@@ -119,17 +111,6 @@ public:
      * Invert a move
      */
     RubiksCube &invert(MOVE ind);
-
-    /*
-     * Rotational Moves on the Rubik Cubes
-     *
-     * F, F’, F2,
-     * U, U’, U2,
-     * L, L’, L2,
-     * D, D’, D2,
-     * R, R’, R2,
-     * B, B’, B2
-     */
 
     virtual RubiksCube &f() = 0;
 
