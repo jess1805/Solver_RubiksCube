@@ -68,7 +68,7 @@ void PatternDatabase::toFile(const string &filePath) const {
     writer.close();
 }
 
-// Returns true of database is loaded successfully
+// Returns true if database is loaded successfully
 // else return false
 
 bool PatternDatabase::fromFile(const string &filePath) {
