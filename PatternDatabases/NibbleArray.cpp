@@ -11,11 +11,11 @@ uint8_t NibbleArray::get(const size_t pos) const {
     assert(pos <= this->size);
     uint8_t val = this->arr.at(i);
 
-//    Odd pos: last 4 bits
+
     if (pos % 2) {
         return val & 0x0F;
     }
-//    Even pos: first 4 bits from the left
+
     else {
         return val >> 4;
     }
@@ -34,8 +34,6 @@ void NibbleArray::set(const size_t pos, const uint8_t val) {
     }
 }
 
-//Get pointer to underlying array
-
 uint8_t *NibbleArray::data() {
     return this->arr.data();
 }
@@ -48,8 +46,6 @@ size_t NibbleArray::storageSize() const {
     return this->arr.size();
 }
 
-// Move all the moves to a vector. This doubles the size, but is faster to access,
-// since there is no bitwise operation needed.
 
 void NibbleArray::inflate(vector<uint8_t> &dest) const {
     dest.reserve(this->size);
