@@ -34,11 +34,11 @@ public:
 
     /**
      * Calculate the lexicographic rank (the index) of a permutation in O(n)
-     * complexity.
+     * complexity
      */
     uint32_t rank(const array<uint8_t, K>& perm) const
     {
-        // This will hold the Lehmer code (in a factorial number system).
+        // This will hold the Lehmer code
         array<uint32_t, K> lehmer;
 
         // Set of "seen" digits in the permutation.
@@ -55,8 +55,6 @@ public:
         {
             seen[N - 1 - perm[i]] = 1;
 
-            // The number of "seen" digits to the left of this digit is the
-            // count of ones left of this digit.
             uint32_t numOnes = this->onesCountLookup[seen.to_ulong() >> (N - perm[i])];
 
             lehmer[i] = perm[i] - numOnes;
@@ -72,4 +70,4 @@ public:
     }
 };
 
-#endif //RUBIKS_CUBE_SOLVER_PERMUTATIONINDEXER_H
+#endif 
